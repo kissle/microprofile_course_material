@@ -7,7 +7,7 @@ Dazu schauen wir uns unterschiedliche Frameworks an und bewerten diese hinsichtl
 
 ## OpenLiberty Jakarta EE 10
 
-Im Ordner jakartaee finden sie ein Beispielprojekt, dass auf https://openliberty.io/start/ erzeugt wurde. 
+Im Ordner jakartaee finden sie ein Beispielprojekt, dass auf https://openliberty.io/start/ erzeugt wurde.
 Hierbei wurde Jakarta EE 10 als Basis mit der Java Version 17 gewählt. MicroProfile wird in diesem Projekt nicht verwendet.
 
 Das Projekt beinhaltet bereits die notwendigen Maven Dateien, sodass Sie die Anwendung direkt mit dem Befehl `mvnw liberty:dev` starten können.
@@ -44,6 +44,97 @@ erzeugen.
 Zum Starten der Anwendung können Sie die `*.jar` Datei mittels
 ```
 java -jar target/jakartaee.jar
+```
+starten.
+
+Beantworten Sie folgende Fragen:
+* Wie groß ist die erzeugte `*.jar` Datei?
+* Wie lange dauert der Start der Anwendung?
+* Wie lange dauert es die Ausführbare `*.jar` Datei zu erzeugen?
+* Wie lange dauert der Start der Anwendung, wenn Sie die Anwendung mittels `mvnw liberty:dev` starten?
+
+## MicroProfile 
+
+Im Ordner microprofile finden sie ein Beispielprojekt, dass auf https://openliberty.io/start/ erzeugt wurde.
+Hierbei wurde MicroProfile 6 als Basis mit der Java Version 17 gewählt. 
+
+Das Projekt beinhaltet bereits die notwendigen Maven Dateien, sodass Sie die Anwendung direkt mit dem Befehl `mvnw liberty:dev` starten können.
+
+Maven wird anschließend zunächst die relevanten Pakete herunterladen und anschließend die Anwendung starten.
+
+Wenn die Anwendung gestartet ist, sollte ihnen eine ähnliche Ausgabe angezeigt werden:
+
+```
+[INFO] [AUDIT   ] CWWKT0017I: Webanwendung entfernt (default_host): http://localhost:9080/microprofile/
+[INFO] [AUDIT   ] CWWKZ0009I: Die Anwendung jakartaee wurde erfolgreich gestoppt.
+[INFO] [AUDIT   ] CWWKT0016I: Webanwendung verfügbar: (default_host): http://localhost:9080/microprofile/
+[INFO] [AUDIT   ] CWWKZ0003I: Die Anwendung jakartaee wurde nach 0,397 Sekunden aktualisiert.
+``` 
+
+Sie können die Applikation nun in ihrem Browser unter `http://localhost:9080/` aufrufen und sollten eine Startseite von OpenLiberty sehen.
+
+Zum erstellen der ausführbaren `*.jar` Datei können Sie die folgenden Befehl ausführen.
+
+Erstellen Sie eine `*.war` Datei mittels:
+```
+mvnw clean package
+```
+
+Anschließend können Sie die ausführbare `*.jar` Datei mittels
+```
+mvnw liberty:package -Dinclude=runnable
+```
+erzeugen.
+
+Zum Starten der Anwendung können Sie die `*.jar` Datei mittels
+```
+java -jar target/microprofile.jar
+```
+starten.
+
+Beantworten Sie folgende Fragen:
+* Wie groß ist die erzeugte `*.jar` Datei?
+* Wie lange dauert der Start der Anwendung?
+* Wie lange dauert es die Ausführbare `*.jar` Datei zu erzeugen?
+* Wie lange dauert der Start der Anwendung, wenn Sie die Anwendung mittels `mvnw liberty:dev` starten?
+
+
+## Quarkus
+
+Im Ordner microprofile finden sie ein Beispielprojekt, dass auf https://openliberty.io/start/ erzeugt wurde.
+Hierbei wurde MicroProfile 6 als Basis mit der Java Version 17 gewählt.
+
+Das Projekt beinhaltet bereits die notwendigen Maven Dateien, sodass Sie die Anwendung direkt mit dem Befehl `mvnw liberty:dev` starten können.
+
+Maven wird anschließend zunächst die relevanten Pakete herunterladen und anschließend die Anwendung starten.
+
+Wenn die Anwendung gestartet ist, sollte ihnen eine ähnliche Ausgabe angezeigt werden:
+
+```
+[INFO] [AUDIT   ] CWWKT0017I: Webanwendung entfernt (default_host): http://localhost:9080/microprofile/
+[INFO] [AUDIT   ] CWWKZ0009I: Die Anwendung jakartaee wurde erfolgreich gestoppt.
+[INFO] [AUDIT   ] CWWKT0016I: Webanwendung verfügbar: (default_host): http://localhost:9080/microprofile/
+[INFO] [AUDIT   ] CWWKZ0003I: Die Anwendung jakartaee wurde nach 0,397 Sekunden aktualisiert.
+``` 
+
+Sie können die Applikation nun in ihrem Browser unter `http://localhost:9080/` aufrufen und sollten eine Startseite von OpenLiberty sehen.
+
+Zum erstellen der ausführbaren `*.jar` Datei können Sie die folgenden Befehl ausführen.
+
+Erstellen Sie eine `*.war` Datei mittels:
+```
+mvnw clean package
+```
+
+Anschließend können Sie die ausführbare `*.jar` Datei mittels
+```
+mvnw liberty:package -Dinclude=runnable
+```
+erzeugen.
+
+Zum Starten der Anwendung können Sie die `*.jar` Datei mittels
+```
+java -jar target/microprofile.jar
 ```
 starten.
 
