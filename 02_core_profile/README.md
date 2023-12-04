@@ -46,8 +46,8 @@ Im `boundary` Package erstellen Sie eine Klasse `MessageResource`. Diese Klasse 
 und stellt folgende RESTful Endpunkte bereit:
 
 * `GET /messages/hello` liefert eine Message mit dem heading "Hello World" und dem body "Hello World from Quarkus"
-* `GET /messages` liefert eine Message mit den übergebenen URL-Parametern
-* `POST /message` fügt eine Message der Liste hinzu
+* `GET /messages/get` liefert eine Message mit den übergebenen URL-Parametern
+* `POST /messages` fügt eine Message der Liste hinzu
 * `GET /messages` liefert eine Liste aller Messages
 * `GET /messages/string` liefert eine Message als String im Format "heading: body"
 
