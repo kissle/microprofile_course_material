@@ -61,3 +61,7 @@ In dieser Übung gehen wir auf die Grundlagen einer Cloud-Native Softwareentwick
 Um die Stabilität des Gesamtsystems sicherzustellen, müssen wir sichergehen, dass Fehler sich nicht fortpflanzen 
 können. Mit Automatisierten tests stellen wir sicher, dass die Abgeschlossenen Systeme
 entsprechend ihren Anforderungen funktionieren. 
+
+## Nützliche Links:
+
+- https://openapi.tools/
