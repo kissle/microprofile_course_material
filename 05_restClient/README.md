@@ -1,8 +1,9 @@
 # MicroProfile Rest Client
 
-In der vorherigen Übung haben Sie den Employee Service kennengelernt. In dieser Übung ist es an Ihnen den Skills Service
-entsprechend den Vorgaben aus den Schulungsunterlagen zu implementieren und die Kommunikation zum Employee Service
-mittels MicroProfile Rest Client zu realisieren.
+In der vorherigen Übung haben Sie den Employee Service kennengelernt. In dieser Übung ist es an Ihnen den 
+[Skills Service](../04_health_metrics/skills.md aus Übung 04_health_metrics zu implementieren 
+und die Kommunikation zum Employee Service mittels MicroProfile Rest Client zu realisieren.
+Bedenken Sie, dass sie auch in diesem Service die Repräsentationen der Employee Klasse pflegen müssen.
 
 ## Aufgabenstellung
 
@@ -30,9 +31,9 @@ Die Klasse `SkillResource` soll die folgenden Methoden besitzen:
 
 ### RestClient implementieren
 
-Implementieren Sie die Klasse EmployeeRestClient, um die Kommunikation zum Employee Service zu realisieren. Die Klasse 
-soll relevanten Methoden besitzen, um die oben genannten Aufgaben zu erfüllen. Ergänzen Sie dazu falls notwendig 
-den Employee Service um die notwendigen Methoden.
+Implementieren Sie die Klasse EmployeeRestClient, um die Kommunikation zum Employee Service zu 
+realisieren. Die Klasse soll relevanten Methoden besitzen, um die oben genannten Aufgaben zu erfüllen. 
+Ergänzen Sie dazu falls notwendig den Employee Service um die notwendigen Methoden.
 
 *Hinweis: Definieren Sie geeignete Ports, um die beiden Services parallel laufen zu lassen.*
 
