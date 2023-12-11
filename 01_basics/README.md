@@ -10,7 +10,7 @@ Dazu schauen wir uns unterschiedliche Frameworks an und bewerten diese hinsichtl
 Im Ordner jakartaee finden sie ein Beispielprojekt, dass auf https://openliberty.io/start/ erzeugt wurde.
 Hierbei wurde Jakarta EE 10 als Basis mit der Java Version 17 gewählt. MicroProfile wird in diesem Projekt nicht verwendet.
 
-Das Projekt beinhaltet bereits die notwendigen Maven Dateien, sodass Sie die Anwendung direkt mit dem Befehl `mvnw liberty:dev` starten können.
+Das Projekt beinhaltet bereits die notwendigen Maven Dateien, sodass Sie die Anwendung direkt mit dem Befehl `.\mvnw liberty:dev` starten können.
 
 Maven wird anschließend zunächst die relevanten Pakete herunterladen und anschließend die Anwendung starten.
 
@@ -32,12 +32,12 @@ Zum erstellen der ausführbaren `*.jar` Datei können Sie die folgenden Befehl a
 
 Erstellen Sie eine `*.war` Datei mittels:
 ```
-mvnw clean package
+.\mvnw clean package
 ```
 
 Anschließend können Sie die ausführbare `*.jar` Datei mittels
 ```
-mvnw liberty:package -Dinclude=runnable
+.\mvnw liberty:package -Dinclude=runnable
 ```
 erzeugen. 
 
@@ -52,14 +52,14 @@ starten.
 * Wie groß ist die erzeugte `*.jar` Datei?
 * Wie lange dauert der Start der Anwendung?
 * Wie lange dauert es die ausführbare `*.jar` Datei zu erzeugen?
-* Wie lange dauert der Start der Anwendung, wenn Sie die Anwendung mittels `mvnw liberty:dev` starten?
+* Wie lange dauert der Start der Anwendung, wenn Sie die Anwendung mittels `.\mvnw liberty:dev` starten?
 
 ## MicroProfile 
 
 Im Ordner microprofile finden sie ein Beispielprojekt, dass auf https://openliberty.io/start/ erzeugt wurde.
 Hierbei wurde MicroProfile 6 als Basis mit der Java Version 17 gewählt. 
 
-Das Projekt beinhaltet bereits die notwendigen Maven Dateien, sodass Sie die Anwendung direkt mit dem Befehl `mvnw liberty:dev` starten können.
+Das Projekt beinhaltet bereits die notwendigen Maven Dateien, sodass Sie die Anwendung direkt mit dem Befehl `.\mvnw liberty:dev` starten können.
 
 Maven wird anschließend zunächst die relevanten Pakete herunterladen und anschließend die Anwendung starten.
 
@@ -78,12 +78,12 @@ Zum erstellen der ausführbaren `*.jar` Datei können Sie die folgenden Befehl a
 
 Erstellen Sie eine `*.war` Datei mittels:
 ```
-mvnw clean package
+.\mvnw clean package
 ```
 
 Anschließend können Sie die ausführbare `*.jar` Datei mittels
 ```
-mvnw liberty:package -Dinclude=runnable
+.\mvnw liberty:package -Dinclude=runnable
 ```
 erzeugen.
 
@@ -106,7 +106,7 @@ starten.
 Im Ordner quarkus finden sie ein Beispielprojekt, dass auf https://code.quarkus.io/ erzeugt wurde.
 Hierbei wurden einige Erweiterungen ausgewählt, die die MicroProfile 6 Spezifikationen erfüllen.
 
-Das Projekt beinhaltet bereits die notwendigen Maven Dateien, sodass Sie die Anwendung direkt mit dem Befehl `mvnw quarkus:dev` starten können.
+Das Projekt beinhaltet bereits die notwendigen Maven Dateien, sodass Sie die Anwendung direkt mit dem Befehl `.\mvnw quarkus:dev` starten können.
 
 Maven wird anschließend zunächst die relevanten Pakete herunterladen und anschließend die Anwendung starten.
 
@@ -132,7 +132,7 @@ Quarkus bietet für Entwickler eine ausführlichere Startseite an, die auch auf 
 Zum erstellen der ausführbaren `*.jar` Datei können Sie die folgenden Befehl ausführen.
 
 ```
-mvnw clean package
+.\mvnw clean package
 ```
 
 Dies erstellt die `quarkus-run.jar` Datei im `target/quarkus-app/` Verzeichnis. Diese Datei ist jedoch kein _über-jar_, 
@@ -146,7 +146,7 @@ starten.
 
 Zum erzeugen der _über-jar_ Datei können Sie den folgenden Befehl ausführen:
 ```
-mvnw package -Dquarkus.package.type=uber-jar
+.\mvnw package -Dquarkus.package.type=uber-jar
 ```
 
 Die Anwendung lässt sich anschließend mittels
@@ -160,4 +160,4 @@ starten.
 * Wie groß sind die erzeugten `*.jar` und _über-jar_ Dateien?
 * Wie lange dauert der Start der Anwendung?
 * Wie lange dauert es die ausführbare `*.jar` Datei zu erzeugen?
-* Wie lange dauert der Start der Anwendung, wenn Sie die Anwendung mittels `mvnw quarkus:dev` starten?
+* Wie lange dauert der Start der Anwendung, wenn Sie die Anwendung mittels `.\mvnw quarkus:dev` starten?
