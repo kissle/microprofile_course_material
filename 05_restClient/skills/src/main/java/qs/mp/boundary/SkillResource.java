@@ -7,6 +7,7 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import org.jboss.resteasy.reactive.common.NotImplementedYet;
 import qs.mp.control.SkillService;
+import qs.mp.entity.Employee;
 import qs.mp.entity.Skill;
 
 import java.util.List;
@@ -35,7 +36,7 @@ public class SkillResource {
 
     @GET
     @Path("/{id}/employees")
-    public List<Skill> getEmployees(@PathParam("id") int id) {
-       throw new NotImplementedYet();
+    public List<Employee> getEmployees(@PathParam("id") int id) {
+       return skillService.getEmployeesBySkillId(id);
     }
 }
