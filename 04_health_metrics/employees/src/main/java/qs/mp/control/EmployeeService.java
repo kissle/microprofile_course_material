@@ -31,11 +31,17 @@ public class EmployeeService {
                 .orElseThrow(() -> new IllegalArgumentException("Employee with id " + id + " not found"));
     }
 
-    public List<Skill> getEmployeeSkills(int id) {
-        return getEmployeeById(id).getSkills();
+    public List<Integer> getEmployeeSkills(int id) {
+        return getEmployeeById(id).getSkillIds();
     }
 
-    public void addEmployeeSkill(int id, Skill skill) {
-        getEmployeeById(id).addSkill(skill);
+    public void addEmployeeSkill(int id, Integer skillId) {
+        getEmployeeById(id).addSkill(skillId);
+    }
+
+    public List<Employee> getEmployeeBySkillId(int skillId) {
+        return employees.stream()
+                .filter(e -> e.getSkillIds().contains(skillId))
+                .toList();
     }
 }
