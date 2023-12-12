@@ -41,15 +41,21 @@ public class EmployeeResource {
     @GET
     @Path("/{id}/skills")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Skill> getEmployeeSkills(int id) {
+    public List<Integer> getEmployeeSkills(int id) {
         return employeeService.getEmployeeSkills(id);
     }
 
     @POST
     @Path("/{id}/skills")
     @Consumes(MediaType.APPLICATION_JSON)
-    public void addEmployeeSkill(@PathParam("id") int id, Skill skill) {
-        employeeService.addEmployeeSkill(id, skill);
+    public void addEmployeeSkill(@PathParam("id") int id, Integer skillId) {
+        employeeService.addEmployeeSkill(id, skillId);
     }
 
+    @GET
+    @Path("/skills/{skillId}")
+    public List<Employee> getEmployeeBySkillId(@PathParam("skillId") int skillId) {
+        return employeeService.getEmployeeBySkillId(skillId);
+    }
 }
+
