@@ -10,7 +10,7 @@ public class Employee {
 
     private String firstName;
     private String lastName;
-    private List<Skill> skills;
+    private List<Integer> skillIds;
 
     public Employee(String firstName, String lastName) {
         this.id = counter.incrementAndGet();
@@ -26,12 +26,12 @@ public class Employee {
         return firstName + " " + lastName;
     }
 
-    public List<Skill> getSkills() {
-        return skills;
+    public List<Integer> getSkillIds() {
+        return skillIds;
     }
 
-    public void addSkill(Skill skill) {
-        skills.add(skill);
+    public void addSkill(Integer skillId) {
+        skillIds.add(skillId);
     }
 
 }

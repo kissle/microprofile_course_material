@@ -4,7 +4,8 @@ Verteilte Systeme sind schwerer zu überwachen und zu debuggen als monolithische
 Rückschlüsse auf den Systemzustand ziehen zu können, werden in verteilten Systemen häufig Metriken und Trace-Informationen
 gesammelt. Diese Informationen werden in einem zentralen System gesammelt und können dort ausgewertet werden.
 
-In diesem Beispiel nutzer wir das Tracing Tool Jaeger, um Informationen über unsere Services zu sammeln. 
+In diesem Beispiel nutzer wir das Tracing Tool [Jaeger](https://www.jaegertracing.io), 
+um Informationen über unsere Services zu sammeln. 
 
 ## Aufgabenstellung
 
@@ -22,8 +23,8 @@ Fügen Sie die notwendigen Abhängigkeiten zu den Services hinzu, um OpenTelemet
 
 ### 2. Jaeger starten
 
-Wir verwenden Jaeger als Tracing Tool und nutzen für den Betrieb Docker. Erweitern Sie Ihre `docker-compose.yml` aus 
-Übung 04 Health und Metrics um einen Jaeger Service. 
+Wir verwenden Jaeger als Tracing Tool und nutzen für den Betrieb Docker. 
+Erweitern Sie Ihre `docker-compose.yml` aus Übung 04 Health und Metrics um einen Jaeger Service. 
 
 ```yaml
   jaeger:
@@ -41,7 +42,8 @@ Wir verwenden Jaeger als Tracing Tool und nutzen für den Betrieb Docker. Erweit
     restart: always
 ```
 
-Starten Sie Jaeger mit `docker-compose up -d`. Sie können Jaeger unter http://localhost:16686 aufrufen.
+Starten Sie Jaeger mit `docker-compose up --build`, um den Container neu zu erstellen und Jaeger mit den 
+notwendigen Ports zu starten. Sie können die Jaeger UI unter http://localhost:16686 aufrufen.
 
 Wenn dieser Service läuft und unsere Microservices um OpenTelemetry erweitert sind, sollten diese die Tracing-Informationen
 automatisch an Jaeger senden.

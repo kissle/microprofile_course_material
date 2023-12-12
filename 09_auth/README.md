@@ -16,6 +16,6 @@ Implementieren Sie relevante Funktionalitäten Ihres Auth Services entsprechend 
 
 ### 2. RoleBasedAccess
 
-Implementieren Sie Ihre Authentifizierungsmechanismen entsprechend der Quarkus Dokumentationen 
-[Using JWT RBAC](https://quarkus.io/guides/security-jwt).
+Implementieren Sie Ihre Authentifizierungsmechanismen entsprechend der Quarkus Dokumentationen für den 
+Employee Service [Using JWT RBAC](https://quarkus.io/guides/security-jwt).
 
