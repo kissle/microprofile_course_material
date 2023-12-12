@@ -3,6 +3,8 @@ package qs.mp.boundary;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
+import org.eclipse.microprofile.metrics.annotation.Counted;
+import org.eclipse.microprofile.metrics.annotation.Timed;
 import qs.mp.control.EmployeeService;
 import qs.mp.entity.Employee;
 import qs.mp.entity.Skill;
@@ -16,6 +18,8 @@ public class EmployeeResource {
     EmployeeService employeeService;
 
     @GET
+    @Timed(name = "getEmployeesTimer")
+    @Counted(name = "getEmployeesCounter")
     @Produces(MediaType.APPLICATION_JSON)
     public List<Employee> getEmployees() {
         return employeeService.getEmployees();
