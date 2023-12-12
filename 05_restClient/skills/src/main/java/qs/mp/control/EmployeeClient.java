@@ -6,7 +6,7 @@ import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 import qs.mp.entity.Employee;
 
 @Path("/employees")
-@RegisterRestClient(configKey = "employees")
+@RegisterRestClient(baseUri = "http://localhost:8082")
 public interface EmployeeClient {
 
     @GET

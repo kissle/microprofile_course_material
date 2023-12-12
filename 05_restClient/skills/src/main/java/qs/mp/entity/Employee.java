@@ -3,12 +3,14 @@ package qs.mp.entity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 import java.util.List;
 
 @Getter
 @Setter
 @NoArgsConstructor
+@Schema(name = "Employee", description = "POJO that represents an employee.")
 public class Employee {
 
     private int id;
