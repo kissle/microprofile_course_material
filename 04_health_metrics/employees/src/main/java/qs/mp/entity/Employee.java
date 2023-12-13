@@ -1,16 +1,25 @@
 package qs.mp.entity;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
+@Getter
+@Setter
 public class Employee {
 
     private static final AtomicInteger counter = new AtomicInteger(0);
+    @Getter
     private final int id;
 
     private String firstName;
     private String lastName;
-    private List<Integer> skillIds;
+    @Getter
+    private List<Integer> skillIds = new ArrayList<Integer>();
 
     public Employee(String firstName, String lastName) {
         this.id = counter.incrementAndGet();
@@ -18,16 +27,8 @@ public class Employee {
         this.lastName = lastName;
     }
 
-    public int getId() {
-        return id;
-    }
-
     public String getName() {
         return firstName + " " + lastName;
-    }
-
-    public List<Integer> getSkillIds() {
-        return skillIds;
     }
 
     public void addSkill(Integer skillId) {
