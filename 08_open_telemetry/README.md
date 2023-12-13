@@ -16,8 +16,8 @@ Fügen Sie die notwendigen Abhängigkeiten zu den Services hinzu, um OpenTelemet
 ```xml 
 <dependency>
     <groupId>io.quarkus</groupId>
-    <artifactId>quarkus-smallrye-opentelemetry</artifactId>
-    </dependency>
+    <artifactId>quarkus-opentelemetry</artifactId>
+</dependency>
 ```
 
 

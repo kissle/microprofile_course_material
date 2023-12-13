@@ -21,10 +21,11 @@ public class Employee {
     @Getter
     private List<Integer> skillIds = new ArrayList<Integer>();
 
-    public Employee(String firstName, String lastName) {
+    public Employee(String firstName, String lastName, List<Integer> skillIds) {
         this.id = counter.incrementAndGet();
         this.firstName = firstName;
         this.lastName = lastName;
+        this.skillIds = skillIds;
     }
 
     public String getName() {

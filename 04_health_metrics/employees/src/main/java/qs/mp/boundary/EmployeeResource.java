@@ -81,7 +81,7 @@ public class EmployeeResource {
     @Operation(summary = "Get employees by skill id")
     @APIResponse(responseCode = "200", description = "Employees with skill",
             content = @Content(mediaType = MediaType.APPLICATION_JSON, schema = @Schema(implementation = Employee.class, type = SchemaType.ARRAY)))
-    public List<Employee> getEmployeeBySkillId(@PathParam("skillId") int skillId) {
+    public List<Employee> getEmployeeBySkillId(@PathParam("skillId") int skillId) throws InterruptedException {
         return employeeService.getEmployeeBySkillId(skillId);
     }
 }

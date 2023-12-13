@@ -53,7 +53,7 @@ public class SkillResource {
     @Operation(summary = "Get employees by skill id")
     @APIResponse(responseCode = "200", description = "List of employees",
             content = @Content(mediaType = "application/json", schema = @Schema(implementation = Employee.class)))
-    public List<Employee> getEmployees(@PathParam("id") int id) {
+    public List<Employee> getEmployees(@PathParam("id") int id) throws InterruptedException {
        return skillService.getEmployeesBySkillId(id);
     }
 }
