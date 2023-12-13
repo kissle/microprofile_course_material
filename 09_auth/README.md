@@ -9,13 +9,15 @@ In dieser Übung erstellen wir einen Auth Service, der JWTs ausstellt.
 
 ## Aufgabenstellung
 
-### 1. Auth Service erstellen
+### Auth Service erstellen & RoleBasedAccess
 
-Implementieren Sie relevante Funktionalitäten Ihres Auth Services entsprechend der Quarkus Dokumentationen 
-[Build, Sign and Encrypt JSON Web Tokens](https://quarkus.io/guides/security-jwt-build).
+Implementieren Sie Ihre Authentifizierungsmechanismen entsprechend der Quarkus Dokumentationen für den 
+Employee Service [Using JWT RBAC](https://quarkus.io/guides/security-jwt).
 
-### 2. RoleBasedAccess
+*Hinweis: Schauen Sie sie sich die Lösung auch gerne beim Quarkus im Unterprojekt `security-jwt-quickstart` ab. 
+[Quakrus-Quickstarts](https://github.com/quarkusio/quarkus-quickstarts)
 
-Implementieren Sie Ihre Authentifizierungsmechanismen entsprechend der Quarkus Dokumentationen 
-[Using JWT RBAC](https://quarkus.io/guides/security-jwt).
+## Bonus: 
 
+Quarkus Quickstart bietet auch ein Beispiel für die Authentifizierung mittels Keycloak an:
+[Using Keycloak Authorization Services and Policy Enforcer to Protect JAX-RS Applications](https://github.com/quarkusio/quarkus-quickstarts/tree/main/security-keycloak-authorization-quickstart)

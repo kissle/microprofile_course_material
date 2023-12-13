@@ -8,7 +8,7 @@ In dieser Übung werden wir die drei bestehenden Services um die Fähigkeit erwe
 ### 1. Fehler Implementieren
 
 Um die Funktionalitäten der Spezifikation zu testen, müssen wir zunächst Fehler in den Services implementieren.
-Erweitern Sie die Services Skills, Employees und Projects um Fehler, die die Nutzung der Services verhindern oder 
+Erweitern Sie die Services Skills und Employees um Fehler, die die Nutzung der Services verhindern oder 
 beeinträchtigen.
 
 ### 2. Fault Tolerance in den Services aktivieren
@@ -25,5 +25,6 @@ erweitern um `smallrye-fault-tolerance`:
 
 ### 3. Fault Tolerance in den Services konfigurieren
 
-Ergreifen Sie Maßnahmen, um die Fehler in den Services zu behandeln. Verwenden Sie dabei die Annotationen der Spezifikation.
+Ergreifen Sie Maßnahmen, um die Fehler in den Services zu behandeln. 
+Verwenden Sie dabei die Annotationen der Spezifikation.
 

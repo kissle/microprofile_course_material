@@ -12,3 +12,8 @@ scrape_configs:
      - targets: [ 'host.docker.internal:8083' ]
     metrics_path: '/q/metrics'
     scrape_interval: 1s
+  - job_name: auth
+    static_configs:
+      - targets: [ 'host.docker.internal:8090' ]
+    metrics_path: '/q/metrics'
+    scrape_interval: 1s
