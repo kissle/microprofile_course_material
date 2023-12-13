@@ -1,20 +1,20 @@
 package qs.mp.control;
 
 import jakarta.enterprise.context.ApplicationScoped;
+import lombok.Getter;
+import lombok.Setter;
 import qs.mp.entity.Employee;
 import qs.mp.entity.Skill;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
+@Setter
 @ApplicationScoped
 public class EmployeeService {
 
     private final List<Employee> employees = new ArrayList<>();
-
-    public List<Employee> getEmployees() {
-        return employees;
-    }
 
     public void addEmployee(Employee employee) {
         employees.add(employee);

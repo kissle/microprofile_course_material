@@ -1,7 +1,12 @@
 package qs.mp.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.concurrent.atomic.AtomicInteger;
 
+@Getter
+@Setter
 public class Skill {
 
     private static final AtomicInteger counter = new AtomicInteger(0);
@@ -14,18 +19,6 @@ public class Skill {
         this.id = counter.incrementAndGet();
         this.name = name;
         this.level = level;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Level getLevel() {
-        return level;
     }
 
     public Boolean isMoreExperiencedThan(Skill skill) {
