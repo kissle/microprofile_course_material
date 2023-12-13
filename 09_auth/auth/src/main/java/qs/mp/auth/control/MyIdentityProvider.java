@@ -5,52 +5,50 @@ import io.quarkus.security.identity.IdentityProvider;
 import io.quarkus.security.identity.SecurityIdentity;
 import io.quarkus.security.runtime.QuarkusSecurityIdentity;
 import io.smallrye.mutiny.Uni;
-import qs.mp.auth.AuthRole;
-import qs.mp.auth.entity.*;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+import org.eclipse.microprofile.rest.client.inject.RestClient;
+import org.jboss.logging.Logger;
+import qs.mp.auth.entity.MyAuthRequest;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+@ApplicationScoped
+public class MyIdentityProvider implements IdentityProvider<MyAuthRequest> {
 
-public class MyIdentityProvider implements IdentityProvider<XAuthTokenRequest> {
+    @Inject
+    @RestClient
+    AuthClient authClient;
+
+    private static final Logger LOG = Logger.getLogger(MyIdentityProvider.class);
+
     @Override
-    public Class<XAuthTokenRequest> getRequestType() {
-        return null;
+    public Class<MyAuthRequest> getRequestType() {
+        return MyAuthRequest.class;
     }
 
     @Override
-    public Uni<SecurityIdentity> authenticate(XAuthTokenRequest request, AuthenticationRequestContext authenticationRequestContext) {
-        final String token = request.getToken();
+    public Uni<SecurityIdentity> authenticate(MyAuthRequest myAuthRequest, AuthenticationRequestContext authenticationRequestContext) {
+        LOG.info("MyIdentityProvider");
 
-        final ValidatedToken[] validatedTokens = new ValidatedToken[]{null};
+        String authorization = myAuthRequest.getToken();
 
-        // E.g. Request UserRights from different service
-        // Mocking Example here.
-        List<UserRights> userRights = new ArrayList<>();
-        userRights.add(new UserRights(List.of("read", "write")));
+        return authClient.validateToken(authorization).onItem().transform(isValid -> {
+            LOG.info("Validating Token. Issuer: " + isValid);
+            if (isValid) {
+                // If credentials are valid, create and return the SecurityIdentity
+                QuarkusSecurityIdentity identity = QuarkusSecurityIdentity.builder()
+                        .setPrincipal(() -> authorization) // Set the principal
+                        .addRole("User")
+                        .addRole("Admin")// Add roles as necessary
+                        .build();
 
-        return Uni.createFrom().optional(Optional.of(this.buildIdentity(userRights, validatedTokens[0], token)));
-    }
+                LOG.error("Identity: " + identity.getRoles());
 
-    protected SecurityIdentity buildIdentity(List<UserRights> userRights, ValidatedToken validatedToken, String token) {
-        var builder = QuarkusSecurityIdentity.builder().setPrincipal(validatedToken.getUserPrincipal());
-
-        List<String> roles = new ArrayList<>();
-        for (UserRights right: userRights) {
-            for (String scope : right.getScopes()) {
-                builder.addRole(scope);
-                roles.add(scope);
+                return identity;
+            } else {
+                // If credentials are invalid, return null or handle accordingly
+                LOG.error("You shall not pass!");
+                return null;
             }
-        }
-
-        validatedToken.getLoginInfo().setToken(token);
-        return builder.build();
-    }
-
-    protected Uni<ValidatedToken> validateToken(String token) {
-        // Custom Validation Logic
-        // Possible Requests to Validation Services
-        MyUser user = new MyUser(0, "Max Mustermann", List.of(AuthRole.ADMIN));
-        return Uni.createFrom().optional(Optional.of(new ValidatedToken(token, new LoginInfo(user, token))));
+        });
     }
 }

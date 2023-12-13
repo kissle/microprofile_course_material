@@ -59,6 +59,8 @@ public class TokenSecuredResource {
         throw new InternalServerErrorException("This method must not be invoked");
     }
 
+
+
     private String getResponseString(SecurityContext ctx) {
         String name;
         if (ctx.getUserPrincipal() == null) {
@@ -78,4 +80,6 @@ public class TokenSecuredResource {
     private boolean hasJwt() {
         return jwt.getClaimNames() != null;
     }
+
+
 }
