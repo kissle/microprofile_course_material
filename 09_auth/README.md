@@ -9,12 +9,7 @@ In dieser Übung erstellen wir einen Auth Service, der JWTs ausstellt.
 
 ## Aufgabenstellung
 
-### 1. Auth Service erstellen
-
-Implementieren Sie relevante Funktionalitäten Ihres Auth Services entsprechend der Quarkus Dokumentationen 
-[Build, Sign and Encrypt JSON Web Tokens](https://quarkus.io/guides/security-jwt-build).
-
-### 2. RoleBasedAccess
+### Auth Service erstellen & RoleBasedAccess
 
 Implementieren Sie Ihre Authentifizierungsmechanismen entsprechend der Quarkus Dokumentationen für den 
 Employee Service [Using JWT RBAC](https://quarkus.io/guides/security-jwt).
