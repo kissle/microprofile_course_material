@@ -10,7 +10,28 @@ In dieser Übung untersuchen wir die Basis-Technologien, die für Cloud-Native A
 
 ### 1. Dockerfile 
 
-Erstellen Sie ein Dockerfile mit dem Sie in der Lage sind einen eine einfache statische HTML-Seite auszuliefern.
+Erstellen Sie ein `Dockerfile` mit dem Sie in der Lage sind einen eine einfache statische HTML-Seite auszuliefern.
+
+Beachten Sie, dass sie die `nginx.conf` noch ersetzen sollten. Hier finden Sie ein geeignetes Beispiel:
+
+```nginx
+server {
+    listen       80;
+    server_name  localhost;
+
+    location / {
+        root   /usr/share/nginx/html;
+        index  index.html;
+    }
+
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+}
+```
+
+Für die HTML-Seite legen Sie bitte in eigenes Beispiel einer `index.html` an und übertragen es in das Image.
 
 ### 2. Quarkus und Docker
 
