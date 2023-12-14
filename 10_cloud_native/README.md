@@ -55,6 +55,15 @@ Starten Sie Ihre Applikationen und Testen Sie die Funktionalität.
 Wie lange dauert es, bis die Applikation gestartet ist?
 Was ist eine native Applikation?
 
+#### 2.4 Docker Compose
+
+Kopieren Sie Ihr `compose.yml` Beispiel aus der Übung 04_health_metrics. Ergänzen Sie dieses, um die zuvor gebauten Services.
+Achten Sie darauf, dass Sie geeignete Ports für die Services setzen. Überschreiben Sie dabei mittels einer Definition 
+von Umgebungsvariablen im `compose.yml` die Werte aus den `application.properties`.
+
+Wenn Sie erfolgreich waren, sehen Sie nun, dass die Services `Prometheus`, `Employees` und `Skills` gestartet wurden. 
+Können die Metriken weiterhin in Prometheus gelesen werden?
+
 ### Minikube
 
 Minikube ist ein Tool, mit dem Sie Kubernetes lokal ausführen können. Hierbei ist es möglich einen Node zu betreiben 
