@@ -119,18 +119,12 @@ starten.
 
 **Aufgabe 4:** Wie lange dauert der Start der Anwendung?
 
-### Beantworten Sie folgende Fragen:
-
-* Wie groß ist die erzeugte `*.jar` Datei?
-* Wie lange dauert der Start der Anwendung?
-* Wie lange dauert es die ausführbare `*.jar` Datei zu erzeugen?
-* Wie lange dauert der Start der Anwendung, wenn Sie die Anwendung mittels `mvnw liberty:dev` starten?
-
-
 ## Quarkus
 
 Im Ordner quarkus finden sie ein Beispielprojekt, dass auf https://code.quarkus.io/ erzeugt wurde.
 Hierbei wurden einige Erweiterungen ausgewählt, die die MicroProfile 6 Spezifikationen erfüllen.
+
+**Aufgabe 1:** Wie groß ist der Projektordner *vor* dem ersten Ausführen des Entwicklungsservers?
 
 Das Projekt beinhaltet bereits die notwendigen Maven Dateien, sodass Sie die Anwendung direkt mit dem Befehl `.\mvnw quarkus:dev` starten können.
 
@@ -138,7 +132,7 @@ Maven wird anschließend zunächst die relevanten Pakete herunterladen und ansch
 
 Wenn die Anwendung gestartet ist, sollte ihnen eine ähnliche Ausgabe angezeigt werden:
 
-```
+```bash
 Listening for transport dt_socket at address: 5005
 {"timestamp":"2023-12-04T18:56:37.627409+01:00","sequence":2381,"loggerClassName":"org.jboss.logging.Logger","loggerName":"io.quarkus","level":"INFO","message":"quarkus 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.0) started in 2.955s. Listening on: http://localhost:8080","threadName":"Quarkus Main Thread","threadId":129,"mdc":{},"ndc":"","hostName":"alexanders-mbp.fritz.box","processName":"quarkus-dev.jar","processId":45411}
 {"timestamp":"2023-12-04T18:56:37.633737+01:00","sequence":2382,"loggerClassName":"org.jboss.logging.Logger","loggerName":"io.quarkus","level":"INFO","message":"Profile dev activated. Live Coding activated.","threadName":"Quarkus Main Thread","threadId":129,"mdc":{},"ndc":"","hostName":"alexanders-mbp.fritz.box","processName":"quarkus-dev.jar","processId":45411}
@@ -152,38 +146,38 @@ Press [e] to edit command line args (currently ''), [r] to resume testing, [o] T
 
 Sie können die Applikation nun in ihrem Browser unter `http://localhost:8080/` aufrufen und sollten eine Startseite von OpenLiberty sehen.
 
+**Aufgabe 2:** Wie groß ist der Projektordner *nach* dem ersten Ausführen des Entwicklungsservers?
+
 Quarkus bietet für Entwickler eine ausführlichere Startseite an, die auch auf die integrierte Dev-UI, dies sie auch unter
 `http://localhost:8080/q/dev/` aufrufen können. Schauen Sie sich hier einmal um, um die Funktionen zu erkunden.
 
 Zum erstellen der ausführbaren `*.jar` Datei können Sie die folgenden Befehl ausführen.
 
-```
+```bash
 .\mvnw clean package
 ```
 
 Dies erstellt die `quarkus-run.jar` Datei im `target/quarkus-app/` Verzeichnis. Diese Datei ist jedoch kein _über-jar_, 
 da die Abhängigkeiten in das `target/quarkus-app/lib/` Verzeichnis kopiert werden.
 
+**Aufgabe 3:** Wie groß ist die erzeugte Datei `./target/microprofile.jar`?
+
 Zum Starten der Anwendung können Sie die `*.jar` Datei mittels
-```
+
+```bash
 java -jar target/quarkus-app/quarkus-run.jar
 ```
 starten.
 
 Zum erzeugen der _über-jar_ Datei können Sie den folgenden Befehl ausführen:
-```
+
+```bash
 .\mvnw package -Dquarkus.package.type=uber-jar
 ```
 
 Die Anwendung lässt sich anschließend mittels
-```
+
+```bash
 java -jar target/quarkus-1.0.0-SNAPSHOT-runner.jar
 ```
 starten.
-
-### Beantworten Sie folgende Fragen:
-
-* Wie groß sind die erzeugten `*.jar` und _über-jar_ Dateien?
-* Wie lange dauert der Start der Anwendung?
-* Wie lange dauert es die ausführbare `*.jar` Datei zu erzeugen?
-* Wie lange dauert der Start der Anwendung, wenn Sie die Anwendung mittels `.\mvnw quarkus:dev` starten?

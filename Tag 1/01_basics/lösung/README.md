@@ -41,21 +41,24 @@
 
 ### Wie groß ist der Projektordner vor dem ersten Ausführen des Entwicklungsservers?
 
-~ 82kB
+~ 352kB
 
 ### Wie groß ist der Projektordner nach dem ersten Ausführen des Entwicklungsservers?
 
-~ 29 MB
+~ 690 kB
 
-### Wie groß ist die erzeugte `./target/jakartaee.jar` Datei?
+### Wie groß ist die erzeugte `./target/quarkus-app/quarkus-run.jar` Datei?
 
-~ 13,4 MB
+~ 1 kB
 
 ### Wie lange dauert der Start der Anwendung?
 
-~ 0,826 Sekunden
+~ 5 Millisekunden
 
 ## Final Thoughts
 
-Für den Betrieb eines Microservices ist diese Applikation jedoch nicht geeignet, da sie nicht als Microservice konzipiert wurde.
-Dies zeigt sich unter anderem daran, dass die erzeugte `*.jar` Datei über 100 MB groß ist und ein dynamisches Deployment dadurch beeinträchtigt wird.
+Die Jakarta Applikation mit OpenLiberty ist die größte der drei Applikationen, was sich an der größe des Projektordners nach dem Starten des Entwicklungsservers zeigt.
+
+In diesem Beispiel scheinen die kompilierten OpenLiberty Applikationen eine gleiche Größe zu erreichen. In der Praxis wird sich jedoch zeigen, dass MicroProfile entsprechend des Namens einen kleinen Fußabdruck hinterlässt, da nur die benötigten Bibliotheken mitgeliefert und packetiert werden. 
+
+Quarkus ist in diesem Beispiel die kleinste Applikation, wenn dies auch einen unfairen vergleich darstellt. Es läst sich jedoch feststellen, dass Quarkus einen anderen Ansatz verfolgt und für den Betrieb von Microservices optimiert wird. In einer späteren Übung werden wir noch die Möglichkeit von Quarkus eine native Applikation zu erzeugen betrachten.
