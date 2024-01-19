@@ -37,14 +37,18 @@ Erstellen sie als nächstes eine ausführbare `*.jar` Datei, die sie mittels `ja
 Zum erstellen der ausführbaren `*.jar` Datei können Sie die folgenden Befehl ausführen.
 
 Erstellen Sie eine `*.war` Datei mittels:
-```
+
+```bash
 .\mvnw clean package
 ```
 
 Anschließend können Sie die ausführbare `*.jar` Datei mittels
-```
+
+```bash
 .\mvnw liberty:package -Dinclude=runnable
 ```
+
+
 erzeugen. 
 
 **Aufgabe 3:** Wie groß ist die erzeugte Datei `./target/jakartaee.jar`?
@@ -69,39 +73,51 @@ starten. Die Ausgabe unten, gibt ausschluss darüber, wie lange der Start der Ap
 Im Ordner microprofile finden sie ein Beispielprojekt, dass auf https://openliberty.io/start/ erzeugt wurde.
 Hierbei wurde MicroProfile 6 als Basis mit der Java Version 17 gewählt. 
 
+**Aufgabe 1:** Wie groß ist der Projektordner *vor* dem ersten Ausführen des Entwicklungsservers?
+
 Das Projekt beinhaltet bereits die notwendigen Maven Dateien, sodass Sie die Anwendung direkt mit dem Befehl `.\mvnw liberty:dev` starten können.
 
 Maven wird anschließend zunächst die relevanten Pakete herunterladen und anschließend die Anwendung starten.
 
 Wenn die Anwendung gestartet ist, sollte ihnen eine ähnliche Ausgabe angezeigt werden:
 
-```
-[INFO] [AUDIT   ] CWWKT0017I: Webanwendung entfernt (default_host): http://localhost:9080/microprofile/
+```bash
+[INFO] [AUDIT   ] CWWKT0017I: Webanwendung entfernt (default_host): http://localhost:9080/
 [INFO] [AUDIT   ] CWWKZ0009I: Die Anwendung jakartaee wurde erfolgreich gestoppt.
-[INFO] [AUDIT   ] CWWKT0016I: Webanwendung verfügbar: (default_host): http://localhost:9080/microprofile/
+[INFO] [AUDIT   ] CWWKT0016I: Webanwendung verfügbar: (default_host): http://localhost:9080/
 [INFO] [AUDIT   ] CWWKZ0003I: Die Anwendung jakartaee wurde nach 0,397 Sekunden aktualisiert.
 ``` 
 
 Sie können die Applikation nun in ihrem Browser unter `http://localhost:9080/` aufrufen und sollten eine Startseite von OpenLiberty sehen.
 
+**Aufgabe 2:** Wie groß ist der Projektordner *nach* dem ersten Ausführen des Entwicklungsservers?
+
 Zum erstellen der ausführbaren `*.jar` Datei können Sie die folgenden Befehl ausführen.
 
 Erstellen Sie eine `*.war` Datei mittels:
-```
+
+```bash
 .\mvnw clean package
 ```
 
 Anschließend können Sie die ausführbare `*.jar` Datei mittels
-```
+
+```bash
 .\mvnw liberty:package -Dinclude=runnable
 ```
+
 erzeugen.
 
+**Aufgabe 3:** Wie groß ist die erzeugte Datei `./target/microprofile.jar`?
+
 Zum Starten der Anwendung können Sie die `*.jar` Datei mittels
-```
+
+```bash
 java -jar target/microprofile.jar
 ```
 starten.
+
+**Aufgabe 4:** Wie lange dauert der Start der Anwendung?
 
 ### Beantworten Sie folgende Fragen:
 
