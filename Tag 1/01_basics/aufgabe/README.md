@@ -1,32 +1,38 @@
 # 01 Basics Übungen
 
-In diesem Verzeichnis finden Sie die Ordner für die Übungen des ersten Teils des Kurses.
+MicroProfile ist eine Spezifikation für die Entwicklung von Microservices auf Basis von Java EE. Damit steht als zentraler Lehrinhalt dieses Kurses die Entwicklung von Microservives im Vordergrund. 
 
-Ziel der Übungen ist es ihnen ein erstes Grundverständnis der Bedeutung von MicroProfile zu vermitteln. 
-Dazu schauen wir uns unterschiedliche Frameworks an und bewerten diese hinsichtlich ihrer Eignung für eine Microservice Architektur.
+Unter Microservices verstehen wir hierbei eine Architektur, die aus einer Vielzahl von kleinen, unabhängigen Services besteht. Diese Services können in unterschiedlichen Programmiersprachen geschrieben sein und werden über das Netzwerk miteinander verbunden. Für den Betrieb wählt man heute meistens Container Technologien wie Docker oder Kubernetes. Mit diesem Architekturstil verfolgt man üblicherweise das Ziel, die Komplexität der Anwendung zu reduzieren und die Skalierbarkeit zu verbessern. D.h. auch bei spontanen Lastspitzen kann die Anwendung weiterhin performant betrieben werden, ohne dauerhaft Ressourcen zu verschwenden.
+
+Um den Nutzen von MicroProfile bewerten zu können schauen wir uns zunächst den Einsatz bekannter Java Frameworks, die nicht explizit für den Einsatz von MicroServices konzipiert wurden, an und bewerten, ob diese das Ziel einer schnellen Skalierung bei spontanen Lasten erfüllen können.
+
+Dazu bauen wir jeweils eine einfache Web-Applikation, die mittels einer REST-Schnittstelle eine einfache "Hello, World!" nachricht zurückgibt. Diese Applikationen werden wir anschließend bauen und mittels der JVM auf ihrem System ausführen. 
 
 ## OpenLiberty Jakarta EE 10
 
-Im Ordner jakartaee finden sie ein Beispielprojekt, dass auf https://openliberty.io/start/ erzeugt wurde.
+Im Ordner `jakartaee` finden sie ein Beispielprojekt, dass auf `https://openliberty.io/start/` erzeugt wurde.
 Hierbei wurde Jakarta EE 10 als Basis mit der Java Version 17 gewählt. MicroProfile wird in diesem Projekt nicht verwendet.
 
-Das Projekt beinhaltet bereits die notwendigen Maven Dateien, sodass Sie die Anwendung direkt mit dem Befehl `.\mvnw liberty:dev` starten können.
+**Aufgabe 1:** Wie groß ist der Projektordner *vor* dem ersten Ausführen des Entwicklungsservers?
+
+Das Projekt beinhaltet bereits die notwendigen Maven Dateien, sodass Sie die Anwendung direkt mit dem Befehl `.\mvnw liberty:dev` als Entwicklungsserver starten können.
 
 Maven wird anschließend zunächst die relevanten Pakete herunterladen und anschließend die Anwendung starten.
 
 Wenn die Anwendung gestartet ist, sollte ihnen eine ähnliche Ausgabe angezeigt werden:
 
-```
-[INFO] [AUDIT   ] CWWKT0017I: Webanwendung entfernt (default_host): http://localhost:9080/jakartaee/
+```bash
+[INFO] [AUDIT   ] CWWKT0017I: Webanwendung entfernt (default_host): http://localhost:9080/
 [INFO] [AUDIT   ] CWWKZ0009I: Die Anwendung jakartaee wurde erfolgreich gestoppt.
-[INFO] [AUDIT   ] CWWKT0016I: Webanwendung verfügbar: (default_host): http://localhost:9080/jakartaee/
+[INFO] [AUDIT   ] CWWKT0016I: Webanwendung verfügbar: (default_host): http://localhost:9080/
 [INFO] [AUDIT   ] CWWKZ0003I: Die Anwendung jakartaee wurde nach 0,397 Sekunden aktualisiert.
 ``` 
 
-Sie können die Applikation nun in ihrem Browser unter `http://localhost:9080/` aufrufen und sollten eine Startseite von OpenLiberty sehen.
+Sie können die Applikation nun in ihrem Browser unter `http://localhost:9080/api/hello` aufrufen und sollten die Nachricht "Hello, World!" sehen.
 
-Für den Betrieb eines Microservices ist diese Applikation jedoch nicht geeignet, da sie nicht als Microservice konzipiert wurde.
-Dies zeigt sich unter anderem daran, dass die erzeugte `*.jar` Datei über 100 MB groß ist und ein dynamisches Deployment dadurch beeinträchtigt wird.
+**Aufgabe 2:** Wie groß ist der Projektordner *nach* dem ersten Ausführen des Entwicklungsservers?
+
+Erstellen sie als nächstes eine ausführbare `*.jar` Datei, die sie mittels `java -jar` ausführen können.
 
 Zum erstellen der ausführbaren `*.jar` Datei können Sie die folgenden Befehl ausführen.
 
@@ -41,18 +47,22 @@ Anschließend können Sie die ausführbare `*.jar` Datei mittels
 ```
 erzeugen. 
 
+**Aufgabe 3:** Wie groß ist die erzeugte Datei `./target/jakartaee.jar`?
+
 Zum Starten der Anwendung können Sie die `*.jar` Datei mittels
-```
+
+```bash 
 java -jar target/jakartaee.jar
 ```
-starten.
 
-### Beantworten Sie folgende Fragen:
+starten. Die Ausgabe unten, gibt ausschluss darüber, wie lange der Start der Applikation gedauert hat.
 
-* Wie groß ist die erzeugte `*.jar` Datei?
-* Wie lange dauert der Start der Anwendung?
-* Wie lange dauert es die ausführbare `*.jar` Datei zu erzeugen?
-* Wie lange dauert der Start der Anwendung, wenn Sie die Anwendung mittels `.\mvnw liberty:dev` starten?
+```bash 
+[AUDIT   ] CWWKF0011I: Der Server defaultServer ist für die Ausführung von Smarter Planet bereit. Der Server defaultServer ist nach 0,833 Sekunden gestartet.
+```
+
+**Aufgabe 4:** Wie lange dauert der Start der Anwendung?
+
 
 ## MicroProfile 
 

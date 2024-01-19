@@ -11,7 +11,7 @@ Dockerfile will make it easier to create your application image on top of the Op
 image.
 
 1) Once you download the starter project, unpackage the .zip file on your machine.
-2) Open a command line session, navigate to the installation directory, and run `mvnw liberty:dev`. 
+2) Open a command line session, navigate to the installation directory, and run `./mvnw liberty:dev` (Linux/Mac) or `mvnw liberty:dev` (Windows). 
    This will install all required dependencies and start the default server. When complete, you will
    see the necessary features installed and the message "server is ready to run a smarter planet."
 
