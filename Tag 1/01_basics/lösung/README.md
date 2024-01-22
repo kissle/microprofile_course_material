@@ -34,7 +34,7 @@
 
 ### Wie lange dauert der Start der Anwendung?
 
-~ 0,826 Sekunden
+~ 4,5 Sekunden
 
 
 ## MicroProfile mit Quarkus
@@ -53,7 +53,7 @@
 
 ### Wie lange dauert der Start der Anwendung?
 
-~ 5 Millisekunden
+~ 2,5 Sekunden
 
 ## Final Thoughts
 
@@ -61,4 +61,6 @@ Die Jakarta Applikation mit OpenLiberty ist die größte der drei Applikationen,
 
 In diesem Beispiel scheinen die kompilierten OpenLiberty Applikationen eine gleiche Größe zu erreichen. In der Praxis wird sich jedoch zeigen, dass MicroProfile entsprechend des Namens einen kleinen Fußabdruck hinterlässt, da nur die benötigten Bibliotheken mitgeliefert und packetiert werden. 
 
-Quarkus ist in diesem Beispiel die kleinste Applikation, wenn dies auch einen unfairen vergleich darstellt. Es läst sich jedoch feststellen, dass Quarkus einen anderen Ansatz verfolgt und für den Betrieb von Microservices optimiert wird. In einer späteren Übung werden wir noch die Möglichkeit von Quarkus eine native Applikation zu erzeugen betrachten.
+Quarkus ist in diesem Beispiel die kleinste Applikation, wenn dies auch einen unfairen vergleich darstellt. Es läst sich jedoch feststellen, dass Quarkus einen anderen Ansatz verfolgt und für den Betrieb von Microservices optimiert wird. In einer späteren Übung werden wir noch die Möglichkeit von Quarkus eine native Applikation zu erzeugen betrachten. 
+Beachtet man, dass zum Starten eines zusätzlichen Containers die Applikationsdaten in den RAM eines Servers geladen werden müssen, so ist es ein großer Vorteil, wenn die Applikation möglichst klein ist. 
+Für dynamisch skalierende Applikationen lässt sich somit eine schnelles Starten und Stoppen der Applikationen erreichen.

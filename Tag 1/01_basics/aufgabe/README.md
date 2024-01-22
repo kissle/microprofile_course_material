@@ -149,6 +149,8 @@ java -jar target/quarkus-app/quarkus-run.jar
 ```
 starten.
 
+**Aufgabe 4:** Wie lange dauert der Start der Anwendung?
+
 Zum erzeugen der _über-jar_ Datei können Sie den folgenden Befehl ausführen:
 
 ```bash
