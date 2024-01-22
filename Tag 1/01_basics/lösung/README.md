@@ -26,11 +26,11 @@
 
 ### Wie groß ist der Projektordner nach dem ersten Ausführen des Entwicklungsservers?
 
-~ 29 MB
+~ 68,8 MB
 
 ### Wie groß ist die erzeugte `./target/jakartaee.jar` Datei?
 
-~ 13,4 MB
+~ 57,8 MB
 
 ### Wie lange dauert der Start der Anwendung?
 

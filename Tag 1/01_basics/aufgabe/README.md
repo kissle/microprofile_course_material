@@ -89,19 +89,9 @@ Sie können die Applikation nun in ihrem Browser unter `http://localhost:9080/` 
 
 Zum erstellen der ausführbaren `*.jar` Datei können Sie die folgenden Befehl ausführen.
 
-Erstellen Sie eine `*.war` Datei mittels:
-
-```bash
-.\mvnw clean package
-```
-
-Anschließend können Sie die ausführbare `*.jar` Datei mittels
-
 ```bash
 .\mvnw liberty:package -Dinclude=runnable
 ```
-
-erzeugen.
 
 **Aufgabe 3:** Wie groß ist die erzeugte Datei `./target/microprofile.jar`?
 
@@ -132,11 +122,6 @@ Listening for transport dt_socket at address: 5005
 {"timestamp":"2023-12-04T18:56:37.627409+01:00","sequence":2381,"loggerClassName":"org.jboss.logging.Logger","loggerName":"io.quarkus","level":"INFO","message":"quarkus 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.0) started in 2.955s. Listening on: http://localhost:8080","threadName":"Quarkus Main Thread","threadId":129,"mdc":{},"ndc":"","hostName":"alexanders-mbp.fritz.box","processName":"quarkus-dev.jar","processId":45411}
 {"timestamp":"2023-12-04T18:56:37.633737+01:00","sequence":2382,"loggerClassName":"org.jboss.logging.Logger","loggerName":"io.quarkus","level":"INFO","message":"Profile dev activated. Live Coding activated.","threadName":"Quarkus Main Thread","threadId":129,"mdc":{},"ndc":"","hostName":"alexanders-mbp.fritz.box","processName":"quarkus-dev.jar","processId":45411}
 {"timestamp":"2023-12-04T18:56:37.634336+01:00","sequence":2383,"loggerClassName":"org.jboss.logging.Logger","loggerName":"io.quarkus","level":"INFO","message":"Installed features: [cache, cdi, opentelemetry, resteasy-reactive, resteasy-reactive-jackson, smallrye-context-propagation, smallrye-health, smallrye-metrics, smallrye-openapi, spring-cache, swagger-ui, vertx]","threadName":"Quarkus Main Thread","threadId":129,"mdc":{},"ndc":"","hostName":"alexanders-mbp.fritz.box","processName":"quarkus-dev.jar","processId":45411}
-
---
-Tests paused
-Press [e] to edit command line args (currently ''), [r] to resume testing, [o] Toggle test output, [:] for the terminal, [h] for more options>
-
 ``` 
 
 Sie können die Applikation nun in ihrem Browser unter `http://localhost:8080/` aufrufen und sollten eine Startseite von OpenLiberty sehen.
@@ -155,7 +140,7 @@ Zum erstellen der ausführbaren `*.jar` Datei können Sie die folgenden Befehl a
 Dies erstellt die `quarkus-run.jar` Datei im `target/quarkus-app/` Verzeichnis. Diese Datei ist jedoch kein _über-jar_, 
 da die Abhängigkeiten in das `target/quarkus-app/lib/` Verzeichnis kopiert werden.
 
-**Aufgabe 3:** Wie groß ist die erzeugte Datei `./target/microprofile.jar`?
+**Aufgabe 3:** Wie groß ist die erzeugte Datei `./target/quarkus-app/quarkus-run.jar`?
 
 Zum Starten der Anwendung können Sie die `*.jar` Datei mittels
 
