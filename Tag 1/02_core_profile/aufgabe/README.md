@@ -34,8 +34,8 @@ Im `entity` Package erstellen Sie eine Klasse `Message` mit den Attributen `head
 Im `control` Package erstellen Sie eine Klasse `MessageService` mit folgenden Methoden. 
 
 * `getHelloWorldMessage()` liefert eine Message mit dem heading "Hello World" und dem body "Hello World from Quarkus"
-* `getMessage(String heading, String body)` liefert eine Message mit den übergebenen Parametern
-* `getMessageAsString(Message message)` liefert eine Message als String im Format "heading: body"
+* `getAsMessage(String heading, String body)` liefert eine Message mit den übergebenen Parametern
+* `getMessageAsString(Message message)` liefert eine Message als String im Format `"heading: {heading}; body: {body}"`
 * `addMessage(Message message)` fügt eine Message der Liste hinzu
 * `getAllMessages()` liefert eine Liste aller Messages
 
@@ -46,10 +46,10 @@ Im `boundary` Package erstellen Sie eine Klasse `MessageResource`. Diese Klasse 
 und stellt folgende RESTful Endpunkte bereit:
 
 * `GET /messages/hello` liefert eine Message mit dem heading "Hello World" und dem body "Hello World from Quarkus"
-* `GET /messages/get` liefert eine Message mit den übergebenen URL-Parametern
+* `GET /messages/get?heading=Hello&body=World` liefert eine Message mit den übergebenen URL-Parametern heading und body
 * `POST /messages` fügt eine Message der Liste hinzu
 * `GET /messages` liefert eine Liste aller Messages
-* `GET /messages/string` liefert eine Message als String im Format "heading: body"
+* `GET /messages/string` liefert eine Message als String
 
 Beachten Sie, dass alle Endpunkte eine JSON-Response liefern sollen und die passenden Annotationen verwendet werden.
 
@@ -62,8 +62,7 @@ Erweitern Sie die Beispiele aus Aufgabe 1 so, dass die Endpunkte POJOs statt JSO
 
 ### 3. Logging Interceptor
 
-Erstellen Sie einen Logging Interceptor, der alle Requests in der Form "Request: <HTTP-Methode> <URL>" und alle
-Responses in der Form "Response: <HTTP-Statuscode>" loggt in die Konsole loggt.
+Erstellen Sie einen Logging Interceptor `@Logged` der auf Methoden angewendet werden kann und Methodennamen, sowie dessen Parameter Logged.
 
 ### Fragen
 
