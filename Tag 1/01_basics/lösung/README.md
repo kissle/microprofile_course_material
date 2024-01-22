@@ -12,11 +12,11 @@
 
 ### Wie groß ist die erzeugte `./target/jakartaee.jar` Datei?
 
-~ 13,4 MB
+~ 105 MB
 
 ### Wie lange dauert der Start der Anwendung?
 
-~ 0,833 Sekunden
+~ 5,43 Sekunden
 
 ## MicroProfile 6 mit OpenLiberty
 

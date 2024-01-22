@@ -36,20 +36,10 @@ Erstellen sie als nächstes eine ausführbare `*.jar` Datei, die sie mittels `ja
 
 Zum erstellen der ausführbaren `*.jar` Datei können Sie die folgenden Befehl ausführen.
 
-Erstellen Sie eine `*.war` Datei mittels:
-
-```bash
-.\mvnw clean package
-```
-
-Anschließend können Sie die ausführbare `*.jar` Datei mittels
-
 ```bash
 .\mvnw liberty:package -Dinclude=runnable
 ```
 
-
-erzeugen. 
 
 **Aufgabe 3:** Wie groß ist die erzeugte Datei `./target/jakartaee.jar`?
 
@@ -62,7 +52,12 @@ java -jar target/jakartaee.jar
 starten. Die Ausgabe unten, gibt ausschluss darüber, wie lange der Start der Applikation gedauert hat.
 
 ```bash 
-[AUDIT   ] CWWKF0011I: Der Server defaultServer ist für die Ausführung von Smarter Planet bereit. Der Server defaultServer ist nach 0,833 Sekunden gestartet.
+[AUDIT   ] CWWKE0001I: Der Server defaultServer wurde gestartet.
+[WARNUNG ] CWWKS3103W: Es sind keine Benutzer für die BasicRegistry-Konfiguration der ID com.ibm.ws.security.registry.basic.config[basic] definiert.
+[AUDIT   ] CWWKZ0058I: dropins auf Anwendungen überwachen.
+[AUDIT   ] CWWKT0016I: Webanwendung verfügbar: (default_host): http://localhost:9080/
+[AUDIT   ] CWWKZ0001I: Die Anwendung jakartaee ist nach 5,243 Sekunden gestartet.
+
 ```
 
 **Aufgabe 4:** Wie lange dauert der Start der Anwendung?
