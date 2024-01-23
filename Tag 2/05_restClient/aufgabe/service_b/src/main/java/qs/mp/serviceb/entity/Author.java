@@ -1,4 +1,4 @@
-package qs.mp.entity;
+package qs.mp.serviceb.entity;
 
 import lombok.Data;
 
