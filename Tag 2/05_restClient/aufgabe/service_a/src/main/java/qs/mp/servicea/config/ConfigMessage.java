@@ -1,4 +1,4 @@
-package qs.mp.config;
+package qs.mp.servicea.config;
 
 import io.smallrye.config.ConfigMapping;
 

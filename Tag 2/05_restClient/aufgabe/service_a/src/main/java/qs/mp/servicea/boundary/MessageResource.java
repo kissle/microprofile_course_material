@@ -1,13 +1,10 @@
-package qs.mp.boundary;
+package qs.mp.servicea.boundary;
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
-import org.eclipse.microprofile.metrics.annotation.Counted;
-import org.eclipse.microprofile.metrics.annotation.Gauge;
-import org.eclipse.microprofile.metrics.annotation.Timed;
-import qs.mp.control.MessageService;
-import qs.mp.entity.Message;
+import qs.mp.servicea.control.MessageService;
+import qs.mp.servicea.entity.Message;
 
 import java.util.List;
 
