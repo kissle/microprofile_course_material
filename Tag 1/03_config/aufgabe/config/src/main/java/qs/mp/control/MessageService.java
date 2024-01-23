@@ -34,4 +34,20 @@ public class MessageService {
     public Message getHelloWorldMessage() {
         return new Message("Hello World", "Hello World from Quarkus");
     }
+
+    public Message getMessageFromConfig(int id) {
+
+        Message message;
+
+        switch(id) {
+            case 0:
+                message = new Message();
+                break;
+            default:
+                message = getHelloWorldMessage();
+        }
+
+        return message;
+    }
+
 }

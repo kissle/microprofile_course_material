@@ -48,4 +48,11 @@ public class MessageResource {
         return messageService.getMessageAsString(messageService.getMessage(heading, body));
     }
 
+    @GET
+    @Path("/config/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Message getMessageFromConfig(@PathParam("id") int id) {
+        return messageService.getMessageFromConfig(id);
+    }
+
 }
