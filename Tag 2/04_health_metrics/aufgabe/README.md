@@ -69,7 +69,7 @@ scrape_configs:
   - job_name: prometheus
     static_configs:
       - targets: ['host.docker.internal:9090']
-  - job_name: employees
+  - job_name: service_a
     static_configs:
       - targets: ['host.docker.internal:8080']
     metrics_path: '/q/metrics'
@@ -77,7 +77,7 @@ scrape_configs:
 ```
 
 Die Konfiguration enthält zwei Jobs. Der erste Job sammelt Metriken von Prometheus selbst. Der zweite Job sammelt
-Metriken von unserem Employees Service.
+Metriken von unseres `service_a` Service.
 
 Beachten Sie, dass für die Docker Engine gestartet sein muss. Starten Sie dazu Docker Desktop.
 

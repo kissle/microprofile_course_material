@@ -97,12 +97,12 @@ public class MessageService {
         return new Message(heading, body);
     }
 
-    @Gauge(unit = "count", name = "numberOfMessages", description = "How many messages are in the list")
+    @Gauge(unit = "count", name="numberOfMessagesGauge", description = "How many messages are in the list")
     public int numberOfMessages() {
         return messages.size();
     }
 
-    @Gauge(unit = "milliseconds", name = "randomDelay", description = "Random delay in milliseconds")
+    @Gauge(unit = "milliseconds", name="generatedDelay", description = "Random delay in milliseconds")
     public int randomDelay() {
         return random.nextInt(5000);
     }
