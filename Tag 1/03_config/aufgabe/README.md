@@ -18,5 +18,14 @@ Erstellen Sie Konfigurationen entsprechend der Quarkus Dokumentation, um die Ant
 unseres MessageService aus dem vorherigen Beispiel zu konfigurieren. Ihrer Kreativität 
 sind dabei keine Grenzen gesetzt. 
 
-Ziel diese Übung ist es zu verstehen, wie sich die unterschiedlichen Konfigurationsquellen
+Ziel dieser Übung ist es zu verstehen, wie sich die unterschiedlichen Konfigurationsquellen
 verhalten und wie über das ordinal gesteuert werden kann, welche Quelle vorrang hat. 
+
+Als Inspiration können sie im MessageService einen Switch Case aufbauen, um die verschiedenen Konfigurationsquellen zu testen. 
+
+- Lesen Sie die Werte für heading und body als String aus der Konfiguration aus.
+- Lesen Sie die direkt eine Message mittels einem Interface und @ConfigMapping aus.
+- Lesen Sie Konfigurationswerte aus einer `.env` Datei aus.
+- Legen Sie Profile für dev und test in der `application.properties` an und lesen Sie die Werte aus. Beachten Sie, dass Quarkus mittels dem Befehl `quarkus:dev` das dev Profil lädt. Zum testen des test Profils müssen Sie die Anwendung mit `quarkus:dev -D"quarkus.profile"=test` starten oder die Application vorher bauen und mit passendem Profil starten.
+- Legen Sie ein Profile in einer `application-prod.properties` an und beobachten Sie die geänderten Rückgabewerte.
+- Legen Sie eine Custom ConfigSource an und laden Sie die Werte aus dieser Quelle.
