@@ -4,14 +4,21 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import org.eclipse.microprofile.config.ConfigProvider;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
+import org.eclipse.microprofile.metrics.annotation.Counted;
+import org.eclipse.microprofile.metrics.annotation.Gauge;
+import org.eclipse.microprofile.metrics.annotation.Timed;
 import qs.mp.config.ConfigMessage;
 import qs.mp.entity.Message;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 @ApplicationScoped
+@Timed
 public class MessageService {
+
+    private final Random random = new Random();
 
     // Injection Configuration
     @ConfigProperty(name = "greeting.message.heading")
@@ -38,6 +45,8 @@ public class MessageService {
 
     private List<Message> messages = new ArrayList<>();
 
+
+    @Counted(name = "addMessageCount", description = "How many messages have been created")
     public void addMessage(Message message) {
         messages.add(message);
     }
@@ -58,9 +67,17 @@ public class MessageService {
         return new Message(heading, body);
     }
 
-    public Message getHelloWorldMessage() {
+    public Message sayHelloWorld() {
+
+        try {
+            Thread.sleep(randomDelay());
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
         return new Message("Hello World", "Hello World from Quarkus");
     }
+
 
     public Message getMessageFromConfig(int id) {
 
@@ -70,7 +87,7 @@ public class MessageService {
             case 2 -> new Message(envHeading, envBody);
             case 3 -> new Message(profileHeading, profileBody);
             case 4 -> getMessageFromCustomConfigSource();
-            default -> getHelloWorldMessage();
+            default -> sayHelloWorld();
         };
     }
 
@@ -78,5 +95,15 @@ public class MessageService {
         String heading = ConfigProvider.getConfig().getValue("custom.greeting.message.heading", String.class);
         String body = ConfigProvider.getConfig().getValue("custom.greeting.message.body", String.class);
         return new Message(heading, body);
+    }
+
+    @Gauge(unit = "count", name = "numberOfMessages", description = "How many messages are in the list")
+    public int numberOfMessages() {
+        return messages.size();
+    }
+
+    @Gauge(unit = "milliseconds", name = "randomDelay", description = "Random delay in milliseconds")
+    public int randomDelay() {
+        return random.nextInt(5000);
     }
 }

@@ -3,6 +3,9 @@ package qs.mp.boundary;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
+import org.eclipse.microprofile.metrics.annotation.Counted;
+import org.eclipse.microprofile.metrics.annotation.Gauge;
+import org.eclipse.microprofile.metrics.annotation.Timed;
 import qs.mp.control.MessageService;
 import qs.mp.entity.Message;
 
@@ -18,7 +21,7 @@ public class MessageResource {
     @Path("/hello")
     @Produces(MediaType.APPLICATION_JSON)
     public Message hello() {
-        return messageService.getHelloWorldMessage();
+        return messageService.sayHelloWorld();
     }
 
     @GET
@@ -30,6 +33,7 @@ public class MessageResource {
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
     public Message add(Message message) {
         messageService.addMessage(message);
         return message;
