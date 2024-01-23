@@ -2,13 +2,10 @@
 
 In dieser Übung werden wir die MicroProfile Health und Metrics APIs verwenden, um die Gesundheit und Metriken 
 unserer Anwendung zu überwachen. 
-Im Laufe der nächsten Übungen werden wir die Services [Employees](employees.md), [Projects](projects.md) und 
-[Skills](skills.md) entwickeln.
 
-In der Übung zu Health und Metrics steht Ihnen bereits der Employees Service als Ausgangspunkt zur Verfügung.
-Wie in den vorherigen Übungen verwenden wir das entity-control-boundary Pattern. Zu den in diesem Service 
-gepflegten Entitäten gehören die Klassen Employee und Skill sowie das Enum Level. Wie sie sehen, müssen 
-auch in diesem Service Repräsentationen des Skill gepflegt werden.  
+Dazu betrachten wir den Service A, der eine Erweiterung unseres bisherigen Service zum Senden und Empfangen noch `Messages` ist. 
+
+Wie in den vorherigen Übungen verwenden wir das entity-control-boundary Pattern. 
 
 ## Aufgaben 
 
