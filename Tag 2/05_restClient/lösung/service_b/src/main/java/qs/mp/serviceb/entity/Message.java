@@ -1,8 +1,12 @@
 package qs.mp.serviceb.entity;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 public class Message {
 
     private String heading;
@@ -16,6 +20,6 @@ public class Message {
     }
 
     public String toString() {
-        return "(" + this.getAuthor() + ") " + this.getHeading() + ": " + this.getBody();
+        return "(" + this.getAuthor().getName() + ") " + this.getHeading() + ": " + this.getBody();
     }
 }

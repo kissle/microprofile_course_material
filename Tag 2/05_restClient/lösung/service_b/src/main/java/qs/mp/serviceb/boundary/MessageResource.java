@@ -35,8 +35,9 @@ public class MessageResource {
         return messageService.getAllMessages();
     }
 
-    @GET
+    @POST
     @Path("/string")
+    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
     public String getString(Message message) {
         return messageService.getMessageAsString(message);
