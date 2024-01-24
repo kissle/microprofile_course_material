@@ -14,12 +14,6 @@ public class MessageResource {
     @Inject
     MessageService messageService;
 
-    @GET
-    @Path("/hello")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Message hello() {
-        return messageService.sayHelloWorld();
-    }
 
     @GET
     @Path("/get")
@@ -45,14 +39,7 @@ public class MessageResource {
     @GET
     @Path("/string")
     @Produces(MediaType.TEXT_PLAIN)
-    public String getString(@QueryParam("heading") String heading, @QueryParam("body") String body) {
-        return messageService.getMessageAsString(messageService.getMessage(heading, body));
-    }
-
-    @GET
-    @Path("/config/{id}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Message getMessageFromConfig(@PathParam("id") int id) {
-        return messageService.getMessageFromConfig(id);
+    public List<String> getAllAsString() {
+        return messageService.getAllMessagesAsString();
     }
 }

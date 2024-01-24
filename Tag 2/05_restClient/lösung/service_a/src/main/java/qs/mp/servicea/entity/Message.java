@@ -1,31 +1,24 @@
 package qs.mp.servicea.entity;
 
-public class Message {
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@NoArgsConstructor
+public class Message implements IMessage {
+
+    private MessageType messageType = MessageType.MESSAGE_A;
     private String heading;
     private String body;
-
-    public Message() {
-    }
 
     public Message(String heading, String body) {
         this.heading = heading;
         this.body = body;
     }
 
-    public String getHeading() {
-        return heading;
-    }
-
-    public void setHeading(String heading) {
-        this.heading = heading;
-    }
-
-    public String getBody() {
-        return body;
-    }
-
-    public void setBody(String body) {
-        this.body = body;
+    public String toString() {
+        return this.getHeading() + ": " + this.getBody();
     }
 }
