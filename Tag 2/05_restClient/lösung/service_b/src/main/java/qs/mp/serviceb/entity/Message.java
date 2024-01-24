@@ -7,11 +7,13 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Message {
+public class Message implements IMessage {
+
+    private MessageType messageType = MessageType.MESSAGE_B;
 
     private String heading;
     private String body;
-    private qs.mp.serviceb.entity.Author author;
+    private Author author;
 
     public Message(String heading, String body, qs.mp.serviceb.entity.Author author) {
         this.heading = heading;

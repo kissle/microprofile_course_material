@@ -35,11 +35,11 @@ public class MessageResource {
         return messageService.getAllMessages();
     }
 
-    @POST
+    @GET
     @Path("/string")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
-    public String getString(Message message) {
-        return messageService.getMessageAsString(message);
+    public List<String> getAllAsString() {
+        return messageService.getAllMessageAsString();
     }
 }
