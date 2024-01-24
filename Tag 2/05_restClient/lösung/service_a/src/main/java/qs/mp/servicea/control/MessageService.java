@@ -47,8 +47,8 @@ public class MessageService {
             messagesAsString.add(message.toString());
         }
 
-        List<MessageB> messagesB = client.getAll();
-        for (MessageB message : messagesB) {
+        List<IMessage> messagesB = client.getAll();
+        for (IMessage message : messagesB) {
             messagesAsString.add(message.toString());
         }
 

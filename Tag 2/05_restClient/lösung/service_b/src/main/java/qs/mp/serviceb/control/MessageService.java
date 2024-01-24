@@ -7,7 +7,9 @@ import org.eclipse.microprofile.metrics.annotation.Gauge;
 import org.eclipse.microprofile.metrics.annotation.Timed;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import qs.mp.serviceb.entity.Author;
+import qs.mp.serviceb.entity.IMessage;
 import qs.mp.serviceb.entity.Message;
+import qs.mp.serviceb.entity.MessageType;
 import qs.mp.serviceb.servicea.control.ServiceARestClient;
 import qs.mp.serviceb.servicea.entity.MessageA;
 
@@ -25,16 +27,16 @@ public class MessageService {
     private final List<Message> messages = new ArrayList<>();
 
     @Counted(name = "addMessageCount", description = "How many messages have been created")
-    public void addMessage(Message message) {
-        messages.add(message);
+    public IMessage addMessage(IMessage message) {
+        if (message.getMessageType() == MessageType.MESSAGE_A) {
+            return serviceARestClient.add((MessageA) message);
+        }
+        messages.add((Message) message);
+        return message;
     }
 
     public List<Message> getAllMessages() {
         return messages;
-    }
-
-    public String getMessageAsString(Message message) {
-        return message.toString();
     }
 
     public Message sayHelloWorld() {
@@ -47,8 +49,8 @@ public class MessageService {
             messageAsString.add(message.toString());
         }
 
-        List<MessageA> messagesA = serviceARestClient.getAll();
-        for (MessageA messageA : messagesA) {
+        List<IMessage> messagesA = serviceARestClient.getAll();
+        for (IMessage messageA : messagesA) {
             messageAsString.add(messageA.toString());
         }
 

@@ -10,8 +10,6 @@ import qs.mp.serviceb.entity.MessageType;
 @Setter
 @NoArgsConstructor
 public class MessageA implements IMessage {
-
-    private MessageType messageType = MessageType.MESSAGE_A;
     private String heading;
     private String body;
 
@@ -22,5 +20,10 @@ public class MessageA implements IMessage {
 
     public String toString() {
         return this.getHeading() + ": " + this.getBody();
+    }
+
+    @Override
+    public MessageType getMessageType() {
+        return MessageType.MESSAGE_A;
     }
 }

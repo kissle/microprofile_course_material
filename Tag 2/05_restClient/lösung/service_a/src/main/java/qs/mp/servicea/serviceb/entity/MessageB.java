@@ -11,7 +11,6 @@ import qs.mp.servicea.entity.MessageType;
 @NoArgsConstructor
 public class MessageB implements IMessage {
 
-    private MessageType messageType = MessageType.MESSAGE_B;
     private String heading;
     private String body;
     private Author author;
@@ -28,5 +27,10 @@ public class MessageB implements IMessage {
              authorName = this.getAuthor().getName();
         }
         return "(" + authorName + ") " + this.getHeading() + ": " + this.getBody();
+    }
+
+    @Override
+    public MessageType getMessageType() {
+        return MessageType.MESSAGE_B;
     }
 }

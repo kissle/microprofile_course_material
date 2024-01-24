@@ -4,6 +4,7 @@ import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import qs.mp.serviceb.control.MessageService;
+import qs.mp.serviceb.entity.IMessage;
 import qs.mp.serviceb.entity.Message;
 
 import java.util.List;
@@ -24,9 +25,8 @@ public class MessageResource {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Message add(Message message) {
-        messageService.addMessage(message);
-        return message;
+    public IMessage add(IMessage message) {
+        return messageService.addMessage(message);
     }
 
     @GET

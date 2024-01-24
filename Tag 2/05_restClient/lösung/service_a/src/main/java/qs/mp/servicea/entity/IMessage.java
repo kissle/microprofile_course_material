@@ -13,6 +13,7 @@ import qs.mp.servicea.serviceb.entity.MessageB;
 public interface IMessage {
 
     String toString();
-    @JsonIgnore
+
+
     MessageType getMessageType();
 }

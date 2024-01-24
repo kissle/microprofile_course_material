@@ -4,6 +4,7 @@ import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
+import qs.mp.servicea.entity.IMessage;
 import qs.mp.servicea.serviceb.entity.MessageB;
 
 import java.util.List;
@@ -13,7 +14,7 @@ import java.util.List;
 public interface ServiceBRestClient {
 
     @GET
-    List<MessageB> getAll();
+    List<IMessage> getAll();
 
     @POST
     MessageB add(MessageB message);
