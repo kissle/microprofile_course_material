@@ -22,6 +22,10 @@ public class Message implements IMessage {
     }
 
     public String toString() {
-        return "(" + this.getAuthor().getName() + ") " + this.getHeading() + ": " + this.getBody();
+        String authorName = "";
+        if (this.getAuthor() != null) {
+            authorName = this.getAuthor().getName();
+        }
+        return "(" + authorName + ") " + this.getHeading() + ": " + this.getBody();
     }
 }
