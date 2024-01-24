@@ -14,7 +14,7 @@ import java.util.List;
 @Timed
 public class MessageService {
 
-    private List<Message> messages = new ArrayList<>();
+    private final List<Message> messages = new ArrayList<>();
 
     @Counted(name = "addMessageCount", description = "How many messages have been created")
     public void addMessage(Message message) {
