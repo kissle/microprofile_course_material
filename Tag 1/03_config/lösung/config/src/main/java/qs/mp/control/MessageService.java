@@ -2,6 +2,7 @@ package qs.mp.control;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import jakarta.inject.Provider;
 import org.eclipse.microprofile.config.ConfigProvider;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import qs.mp.config.ConfigMessage;
@@ -9,6 +10,7 @@ import qs.mp.entity.Message;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Supplier;
 
 @ApplicationScoped
 public class MessageService {
@@ -31,6 +33,12 @@ public class MessageService {
 
     @ConfigProperty(name = "profile.greeting.message.body")
     String profileBody;
+
+    @ConfigProperty(name = "custom.greeting.message.heading")
+    Supplier<String> customHeading;
+
+    @ConfigProperty(name = "custom.greeting.message.body")
+    Provider<String> customBody;
 
     // Injection Configuration as Object
     @Inject
@@ -60,6 +68,10 @@ public class MessageService {
 
     public Message getHelloWorldMessage() {
         return new Message("Hello World", "Hello World from Quarkus");
+    }
+
+    public Message getSupplierAndProviderMessage() {
+        return new Message(customHeading.get(), customBody.get());
     }
 
     public Message getMessageFromConfig(int id) {
