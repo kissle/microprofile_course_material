@@ -87,7 +87,7 @@ laden und den Container mit der spezifizierten Configuration zu starten.
 Sie können die UI von Prometheus unter http://localhost:9090 aufrufen. 
 Stellen Sie sicher, dass der Employees Service gestartet ist und navigieren Sie zu http://localhost:9090/targets.
 Wenn der Service mit den korrekten Dependencies für Health und Metrics gestartet wurde,
-sollte der Status des Targets `employees` sowie `prometheus` `UP` sein.
+sollte der Status des Targets `service_a` sowie `prometheus` `UP` sein.
 
 Auf der Startseite können Sie die Metriken des Employees Service abfragen. Prometheus verwendet hierbei 
 eine eigene Abfragesprache. Als Hilfestellung können die Verfügbaren in der Suchleiste über das Globus Symbol
