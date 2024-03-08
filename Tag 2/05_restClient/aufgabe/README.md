@@ -10,9 +10,8 @@ Sie müssen daher in beiden Services entsprechende Repräsentation anlegen, um a
 
 ### RestClient in Quarkus
 
-Untersuchen Sie die `pom.xml` des Skills Service. Welche Abhängigkeiten werden hier verwendet, um den 
+Untersuchen Sie die `pom.xml` der Services. Welche Abhängigkeiten werden hier verwendet, um den 
 MicroProfile Rest Client zu verwenden?
-
 
 ### RestClient implementieren
 
