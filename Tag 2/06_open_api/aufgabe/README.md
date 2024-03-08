@@ -29,9 +29,7 @@ Beachten Sie die entsprechende Dokumentation [USING OPENAPI AND SWAGGER UI](http
 
 ### 3. Code-Generierung aus der Schnittstellenbeschreibung (Bonus)
 
-Generieren Sie mittels der von Quarkus bereitgestellten Maven-Plugins den Code für die Clients der beiden Services im 
-Projects Service.
-Implementieren Sie notwendige Funktionalitäten im Projects Service, um die Clients zu verwenden.
+Generieren Sie mittels der von Quarkus bereitgestellten Maven-Plugins den Code für die Clients der beiden Services.
 
 Befolgen Sie bitte dazu die Anleitung in der Dokumentation:
 
