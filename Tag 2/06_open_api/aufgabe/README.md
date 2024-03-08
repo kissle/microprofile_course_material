@@ -20,12 +20,12 @@ Erweitern Sie die beiden Services aus Übung 04 und 05 um die Abhängigkeit `mic
 
 ### 2. OpenApi in den beiden Services konfigurieren
 
-Erweitern Sie die beiden Services Skills und Employees, um angemessene Annotationen, um die Schnittstellen zu 
+Erweitern Sie die beiden Services A und B, um angemessene Annotationen, um die Schnittstellen zu 
 dokumentieren.
 Testen Sie Ihre Schnittstellen mit Swagger-UI (`http://localhost:8080/q/swagger-ui/`) und exportieren Sie die 
 Schnittstellenbeschreibung als JSON-Datei über die angebotene Schnittstelle `/q/openapi?format=json`.
 
-Beachte die entsprechende Dokumentation [USING OPENAPI AND SWAGGER UI](https://quarkus.io/guides/openapi-swaggerui)
+Beachten Sie die entsprechende Dokumentation [USING OPENAPI AND SWAGGER UI](https://quarkus.io/guides/openapi-swaggerui)
 
 ### 3. Code-Generierung aus der Schnittstellenbeschreibung (Bonus)
 
