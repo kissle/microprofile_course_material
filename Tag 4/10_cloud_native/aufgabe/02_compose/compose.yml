@@ -14,7 +14,7 @@ services:
 
   employees:
     build:
-      context: ./employees/src/main/docker/Dockerfile.native-micro
+      context: employees/src/main/docker/Dockerfile.native-micro
       dockerfile: Dockerfile
     ports:
       - "8100:8080"
@@ -23,7 +23,7 @@ services:
 
   skills:
     build:
-      context: ./skills/src/main/docker/Dockerfile.native-micro
+      context: skills/src/main/docker/Dockerfile.native-micro
       dockerfile: Dockerfile
     ports:
       - "8100:8080"
