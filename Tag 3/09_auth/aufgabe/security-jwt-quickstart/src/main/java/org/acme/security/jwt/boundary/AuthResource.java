@@ -9,8 +9,6 @@ import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.SecurityContext;
 import org.acme.security.jwt.control.AuthService;
 
-import java.util.List;
-
 @Path("/auth")
 public class AuthResource {
 
