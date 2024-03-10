@@ -2,6 +2,9 @@ package qs.mp.servicea.control;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import org.eclipse.microprofile.faulttolerance.Fallback;
+import org.eclipse.microprofile.faulttolerance.Timeout;
+import org.eclipse.microprofile.faulttolerance.Retry;
 import org.eclipse.microprofile.metrics.annotation.Counted;
 import org.eclipse.microprofile.metrics.annotation.Gauge;
 import org.eclipse.microprofile.metrics.annotation.Timed;
@@ -14,6 +17,8 @@ import qs.mp.servicea.serviceb.entity.MessageB;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+import java.util.logging.Logger;
 
 @ApplicationScoped
 @Timed
@@ -23,6 +28,8 @@ public class MessageService {
     @Inject
     @RestClient
     ServiceBRestClient client;
+
+    Logger logger = Logger.getLogger(MessageService.class.getName());
 
     @Counted(name = "addMessageCount", description = "How many messages have been created")
     public IMessage addMessage(IMessage message) {
@@ -34,7 +41,15 @@ public class MessageService {
         }
     }
 
-    public List<IMessage> getAllMessages() {
+    public List<IMessage> getAllMessages() throws InterruptedException {
+        Random random = new Random();
+        int randomNumber = random.nextInt(5);
+
+        if (randomNumber < 3) {
+            throw new RuntimeException("Some error occured");
+        }
+
+        Thread.sleep(randomNumber * 1000);
         return messages;
     }
     public Message getMessage(String heading, String body) {
@@ -47,7 +62,7 @@ public class MessageService {
             messagesAsString.add(message.toString());
         }
 
-        List<IMessage> messagesB = client.getAll();
+        List<IMessage> messagesB = getAllMessagesFromServiceB();
         for (IMessage message : messagesB) {
             messagesAsString.add(message.toString());
         }
@@ -58,6 +73,18 @@ public class MessageService {
     @Gauge(unit = "count", name="numberOfMessagesGauge", description = "How many messages are in the list")
     public int numberOfMessages() {
         return messages.size();
+    }
+
+    @Retry(maxRetries = 3)
+    @Fallback(fallbackMethod = "getAllMessagesFromServiceBFallback")
+    @Timeout(4000)
+    public List<IMessage> getAllMessagesFromServiceB() {
+        return client.getAll();
+    }
+
+    private List<IMessage> getAllMessagesFromServiceBFallback() {
+        logger.warning("Fallback method called");
+        return new ArrayList<>();
     }
 
 }

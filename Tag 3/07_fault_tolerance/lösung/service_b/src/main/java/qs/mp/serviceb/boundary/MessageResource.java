@@ -42,7 +42,7 @@ public class MessageResource {
     @Operation(summary = "Get all messages", description = "Get all messages")
     @APIResponse(responseCode = "200", description = "Messages found")
     @APIResponse(responseCode = "404", description = "Messages not found")
-    public List<Message> getAll() {
+    public List<Message> getAll() throws InterruptedException {
         return messageService.getAllMessages();
     }
 

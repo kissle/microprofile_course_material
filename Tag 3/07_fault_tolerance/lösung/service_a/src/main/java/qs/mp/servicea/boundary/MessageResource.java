@@ -5,7 +5,6 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
-import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
 import qs.mp.servicea.control.MessageService;
 import qs.mp.servicea.entity.IMessage;
 import qs.mp.servicea.entity.Message;
@@ -44,7 +43,7 @@ public class MessageResource {
     @Operation(summary = "Get all messages", description = "Get all messages")
     @APIResponse(responseCode = "200", description = "Messages found")
     @APIResponse(responseCode = "404", description = "Messages not found")
-    public List<IMessage> getAll() {
+    public List<IMessage> getAll() throws InterruptedException {
         return messageService.getAllMessages();
     }
 
