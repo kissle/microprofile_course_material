@@ -31,7 +31,7 @@ server {
 }
 ```
 
-Für die HTML-Seite legen Sie bitte in eigenes Beispiel einer `index.html` an und übertragen es in das Image.
+Für die HTML-Seite legen Sie bitte ein eigenes Beispiel einer `index.html` an und übertragen es in das Image.
 
 ### 2. Quarkus und Docker
 
@@ -58,7 +58,7 @@ Was ist eine native Applikation?
 ### Minikube
 
 Minikube ist ein Tool, mit dem Sie Kubernetes lokal ausführen können. Hierbei ist es möglich einen Node zu betreiben 
-und die Kubernetes API zu nutzen. Für die Verwaltung können Sie auch eine GUI im Brower nutzen. 
+und die Kubernetes API zu nutzen. Für die Verwaltung können Sie auch eine GUI im Browser nutzen. 
 
 Minikube ist bereits auf Ihrem System installiert.
 
