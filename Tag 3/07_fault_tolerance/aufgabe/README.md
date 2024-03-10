@@ -1,14 +1,14 @@
 # MicroProfile Fault Tolerance
 
 MicroProfile Fault Tolerance ist eine Spezifikation für die Behandlung von Fehlern in Microservice-Architekturen.
-In dieser Übung werden wir die drei bestehenden Services um die Fähigkeit erweitern, Fehler zu behandeln.
+In dieser Übung werden wir die zwei bestehenden Services um die Fähigkeit erweitern, Fehler zu behandeln.
 
 ## Aufgabenstellung
 
 ### 1. Fehler Implementieren
 
 Um die Funktionalitäten der Spezifikation zu testen, müssen wir zunächst Fehler in den Services implementieren.
-Erweitern Sie die Services Skills und Employees um Fehler, die die Nutzung der Services verhindern oder 
+Erweitern Sie die Services um Fehler, die die Nutzung der Services verhindern oder 
 beeinträchtigen.
 
 ### 2. Fault Tolerance in den Services aktivieren
