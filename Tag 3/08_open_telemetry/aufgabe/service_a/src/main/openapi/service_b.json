@@ -1,0 +1,148 @@
+{
+  "openapi" : "3.0.3",
+  "info" : {
+    "title" : "service_b API",
+    "version" : "1.0-SNAPSHOT"
+  },
+  "paths" : {
+    "/messages" : {
+      "get" : {
+        "tags" : [ "Message Resource" ],
+        "summary" : "Get all messages",
+        "description" : "Get all messages",
+        "responses" : {
+          "200" : {
+            "description" : "Messages found",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Message"
+                  }
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Messages not found"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Message Resource" ],
+        "summary" : "Add a message",
+        "description" : "Add a message by heading and body",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/IMessage"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Message added",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/IMessage"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Message not added"
+          }
+        }
+      }
+    },
+    "/messages/hello" : {
+      "get" : {
+        "tags" : [ "Message Resource" ],
+        "summary" : "Say hello",
+        "description" : "Say hello to the world",
+        "responses" : {
+          "200" : {
+            "description" : "Hello world",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Hello world not found"
+          }
+        }
+      }
+    },
+    "/messages/string" : {
+      "get" : {
+        "tags" : [ "Message Resource" ],
+        "summary" : "Get all messages as string",
+        "description" : "Get all messages as string",
+        "responses" : {
+          "200" : {
+            "description" : "Messages found",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Author" : {
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          }
+        }
+      },
+      "IMessage" : {
+        "type" : "object",
+        "properties" : {
+          "messageType" : {
+            "$ref" : "#/components/schemas/MessageType"
+          }
+        }
+      },
+      "Message" : {
+        "type" : "object",
+        "properties" : {
+          "heading" : {
+            "type" : "string"
+          },
+          "body" : {
+            "type" : "string"
+          },
+          "author" : {
+            "$ref" : "#/components/schemas/Author"
+          },
+          "messageType" : {
+            "$ref" : "#/components/schemas/MessageType"
+          }
+        }
+      },
+      "MessageType" : {
+        "enum" : [ "MESSAGE_A", "MESSAGE_B" ],
+        "type" : "string"
+      }
+    }
+  }
+}

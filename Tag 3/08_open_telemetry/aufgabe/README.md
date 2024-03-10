@@ -4,7 +4,7 @@ Verteilte Systeme sind schwerer zu überwachen und zu debuggen als monolithische
 Rückschlüsse auf den Systemzustand ziehen zu können, werden in verteilten Systemen häufig Metriken und Trace-Informationen
 gesammelt. Diese Informationen werden in einem zentralen System gesammelt und können dort ausgewertet werden.
 
-In diesem Beispiel nutzer wir das Tracing Tool [Jaeger](https://www.jaegertracing.io), 
+In diesem Beispiel nutzen wir das Tracing Tool [Jaeger](https://www.jaegertracing.io), 
 um Informationen über unsere Services zu sammeln. 
 
 ## Aufgabenstellung
