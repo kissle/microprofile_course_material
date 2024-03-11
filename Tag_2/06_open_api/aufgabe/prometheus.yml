@@ -1,0 +1,14 @@
+scrape_configs:
+  - job_name: prometheus
+    static_configs:
+      - targets: ['host.docker.internal:9090']
+  - job_name: service_a
+    static_configs:
+      - targets: ['host.docker.internal:8080']
+    metrics_path: '/q/metrics'
+    scrape_interval: 1s
+  - job_name: service_b
+    static_configs:
+      - targets: ['host.docker.internal:8082']
+    metrics_path: '/q/metrics'
+    scrape_interval: 1s

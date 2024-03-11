@@ -28,3 +28,6 @@ replay_pid*
 *.ipr
 *.iws
 .idea/
+
+# MacOs file system stuff
+.DS_Store
