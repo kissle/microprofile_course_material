@@ -15,7 +15,7 @@ MicroProfile Rest Client zu verwenden?
 
 ### RestClient implementieren
 
-Implementieren Sie die Klasse ServiceARestClient und ServiceBRestClient in den entsprechenden Services, um die Kommunikation zwischen den Services zu realisieren. 
+Implementieren Sie die Interfaces ServiceARestClient und ServiceBRestClient in den entsprechenden Services, um die Kommunikation zwischen den Services zu realisieren. 
 
 Egal welchen Service der Nutzer anfragt, soll eine Liste aller Messages als String aus beiden Services zurückgegeben werden.
 
