@@ -124,7 +124,9 @@ Listening for transport dt_socket at address: 5005
 {"timestamp":"2023-12-04T18:56:37.634336+01:00","sequence":2383,"loggerClassName":"org.jboss.logging.Logger","loggerName":"io.quarkus","level":"INFO","message":"Installed features: [cache, cdi, opentelemetry, resteasy-reactive, resteasy-reactive-jackson, smallrye-context-propagation, smallrye-health, smallrye-metrics, smallrye-openapi, spring-cache, swagger-ui, vertx]","threadName":"Quarkus Main Thread","threadId":129,"mdc":{},"ndc":"","hostName":"alexanders-mbp.fritz.box","processName":"quarkus-dev.jar","processId":45411}
 ``` 
 
-Sie können die Applikation nun in ihrem Browser unter `http://localhost:8080/` aufrufen und sollten eine Startseite von OpenLiberty sehen.
+Sie können die Applikation nun in ihrem Browser unter `http://localhost:8080/` aufrufen und sollten eine Startseite von Quarkus sehen.
+
+Beim Aufrufen der URL `http:localhost:8080/hello` sollte der Text "Hello from RESTEasy Reactive" erscheinen.
 
 **Aufgabe 2:** Wie groß ist der Projektordner *nach* dem ersten Ausführen des Entwicklungsservers?
 
